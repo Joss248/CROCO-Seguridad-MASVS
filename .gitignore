@@ -1,0 +1,17 @@
+# Configuración local y credenciales
+.env
+.env.*
+!.env.example
+conexion.php
+conexion copy.php
+
+# Bases de datos y respaldos
+*.sql
+*.sqlite
+*.db
+*.bak
+
+# Archivos temporales
+*.log
+.DS_Store
+Thumbs.db
