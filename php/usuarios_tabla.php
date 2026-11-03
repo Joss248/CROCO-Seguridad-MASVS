@@ -22,14 +22,14 @@ if(isset($_POST['btnbuscar']))
 $buscar = $_POST['txtbuscar'];
 
 
-$sqlusu = mysqli_query($conn, "SELECT u.name, u.email, u.psswd, u.rol 
+$sqlusu = mysqli_query($conn, "SELECT u.name, u.email, u.rol
 from users u where u.name like '".$buscar."%'");
 
 
 }
 else
 {
-$sqlusu = mysqli_query($conn, "SELECT u.name, u.email, u.psswd, u.rol 
+$sqlusu = mysqli_query($conn, "SELECT u.name, u.email, u.rol
 from users u ORDER BY u.name ASC LIMIT " . (($pagina - 1) * $filasmax)  . "," . $filasmax);
 }
    $resultadoMaximo = mysqli_query($conn, "SELECT count(*) as num_users FROM users");    
@@ -58,7 +58,6 @@ from users u ORDER BY u.name ASC LIMIT " . (($pagina - 1) * $filasmax)  . "," . 
            <tr>
            <th>Nombre</th>
            <th>Email</th>
-           <th>password</th>
            <th>rol</th>
            <th>Acciones</th>
            </tr>
@@ -69,7 +68,6 @@ from users u ORDER BY u.name ASC LIMIT " . (($pagina - 1) * $filasmax)  . "," . 
            echo "<tr style='background:#101010; color:white;'>";
            echo "<td>".$mostrar['name']."</td>";
            echo "<td>".$mostrar['email']."</td>";
-           echo "<td>".$mostrar['psswd']."</td>";
            echo "<td>".$mostrar['rol']."</td>";
            echo "<td style='width:24%'>
            <a class='BotonesTeam1' href=\"usuarios_ver.php?id=$mostrar[email]&pag=$pagina\">&#x1F50D;</a>

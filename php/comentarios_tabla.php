@@ -68,7 +68,7 @@ from comments c ORDER BY c.id_comment ASC LIMIT " . (($pagina - 1) * $filasmax) 
            echo "<tr style='background:#101010; color:white;'>";
            echo "<td>".$mostrar['id_comment']."</td>";
            echo "<td>".$mostrar['creationdatecm']."</td>";
-           echo "<td>".$mostrar['textcomment']."</td>";
+           echo "<td>" . htmlspecialchars($mostrar['textcomment'], ENT_QUOTES, 'UTF-8') . "</td>";
            echo "<td style='width:24%'>
            <a class='BotonesTeam1' href=\"comentarios_ver.php?id=$mostrar[id_comment]&pag=$pagina\">&#x1F50D;</a>
            <a class='BotonesTeam2' href=\"comentarios_modificar.php?id=$mostrar[id_comment]&pag=$pagina\">&#128397;</a>
